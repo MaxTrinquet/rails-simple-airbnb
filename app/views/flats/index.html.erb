@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Flats</h1>
+
+
+<div class="row">
+  <% @flats.each do |flat| %>
+    <div class="col-4">
+      <div class="card norm-height">
+        <img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text">
+          <p><%= flat.address%></p> <p><%= flat.number_of_guests %> <%= flat.price_per_night %></p>
+          <p class="card-text"><small class="text-muted">
+            <%= link_to 'Show', flat %>
+            <%= link_to 'Edit', edit_flat_path(flat) %>
+            <%= link_to 'Destroy', flat, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </small></p>
+
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<%= link_to 'New Flat', new_flat_path %>
